@@ -62,7 +62,7 @@ class AttributeExporter
       attribute_payload = payload(array_of_attributes)
       response = call_appboy(attribute_payload)
       if response.code == 201
-        puts("#{count} out of #{@array_count} users processed")
+        puts("#{count + 1} out of #{@array_count} users processed")
       else
         puts("Error:")
         puts(response)

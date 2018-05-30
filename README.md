@@ -11,4 +11,4 @@
 - The new first column should have the header 'user_id'
 - The second column should have the header 'looker_export.<NAME_OF_YOUR_ATTRIBUTE>' where <NAME_OF_YOUR_ATTRIBUTE> is the name you want for the new attribute.
 - Run the file by running `ruby attribute_exporter.rb` in the user_brazer folder
-- QA by taking various user IDs from the CSV and checking if the attribute shows up on the user records. If this is your first time running this, try doing a test run by using a dummy attribute (e.g. `looker_export.test_on_2018_02_09`)—we can always blacklist old/test attributes, so it's better to try it out first instead of potentially messing up the attribute you want to target.
+- QA by taking various user IDs from the CSV and checking if the attribute shows up on the Braze user records. If this is your first time running this, try doing a test run by using a dummy attribute (e.g. `looker_export.test_on_2018_02_09`)—we can always blacklist old/test attributes, so it's better to try it out first instead of potentially messing up the attribute you want to target.

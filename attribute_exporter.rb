@@ -29,7 +29,7 @@ class AttributeExporter
           puts "Attribute export cancelled."
         end
       else
-        puts "Second CSV column (attribute name) must start with 'users.' Attribute name given: #{@attribute_name}"
+        puts "Second CSV column (attribute name) must start with 'looker_export.' Attribute name given: #{@attribute_name}"
       end
     else
       puts "First CSV column (user ID) must be named 'user_id'"

@@ -10,6 +10,12 @@ VALID_ATTRIBUTE_PREFIX = 'looker_export.'
 
 class AttributeExporter
   def initialize
+    puts "1 for Elevate, 2 for Balance"
+    if gets.chomp == "1"
+      @is_elevate = true
+    else
+      @is_elevate = false
+    end
     full_array = CSV.read(FILE_NAME, "r:ISO-8859-1")
 
     @array_count = full_array.length
@@ -75,9 +81,16 @@ class AttributeExporter
   end
 
   def payload(array_of_attributes)
+    if @is_elevate
+      app_group_id = ENV['APPBOY_APP_GROUP_ID_PRODUCTION']
+    else
+      app_group_id = ENV['APPBOY_APP_GROUP_ID_BALANCE_PRODUCTION']
+    end
+    p app_group_id
     {
-      "app_group_id" => ENV['APPBOY_APP_GROUP_ID_PRODUCTION'],
-      "attributes" => array_of_attributes
+      "app_group_id" => app_group_id,
+      "attributes" => array_of_attributes,
+       "_update_existing_only" => true
     }
   end
 

@@ -20,3 +20,4 @@
 - Put all emails in the emails_to_import.csv file. Don't include a header row.
 - Run frankenbrazer: `ruby frankenbrazer.rb`. Let Jesse G know if something breaks with a screenshot.
 - All users will have an attribute that's a timestamp of their import. You can use this to filter and send emails.
+- Check that the users were uploaded properly by looking for emails in your CSV and checking that the attribute is there. You may have multiple user_id records for the same email address (this system creates user_ids based on the timestamp) - this is OK since Braze will handle unsubscribes on an email level, not a user_id level, and you should use the attributes created during import to segment/send off emails.

@@ -86,7 +86,6 @@ class AttributeExporter
     else
       app_group_id = ENV['APPBOY_APP_GROUP_ID_BALANCE_PRODUCTION']
     end
-    p app_group_id
     {
       "app_group_id" => app_group_id,
       "attributes" => array_of_attributes,
